@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ${USERNAME:="admin"}
-${INTERFACE:="jupyterlab"}
+${INTERFACE:=""}
 ${AUTHTYPE:="NativeAuthenticator"}
 ${FAILED_LOGINS:=5}
 ${NEXT_TRY:=120}
@@ -12,9 +12,7 @@ curl -L https://tljh.jupyter.org/bootstrap.py \
   | sudo python3 - \
     --admin $USERNAME
 
-echo [$AUTHTYPE == "NativeAuthenticator"] >> /tmp/printenv.out
-
-if [$AUTHTYPE == "NativeAuthenticator"]; then
+if [$AUTHTYPE = "NativeAuthenticator"]; then
     tljh-config set auth.type nativeauthenticator.NativeAuthenticator
     tljh-config set auth.NativeAuthenticator.allowed_failed_logins $FAILED_LOGINS
     tljh-config set auth.NativeAuthenticator.seconds_before_next_try $NEXT_TRY
