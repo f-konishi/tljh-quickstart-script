@@ -1,8 +1,8 @@
 #!/bin/bash
 
 ${USERNAME="admin"}
-${INTERFACE=""}
-${AUTHTYPE=""}
+${INTERFACE="_"}
+${AUTHTYPE="_"}
 ${FAILED_LOGINS=5}
 ${NEXT_TRY=120}
 
@@ -23,7 +23,7 @@ EOT
 
 fi
 
-if [$INTERFACE != ""]; then
+if [$INTERFACE != "_"]; then
     tljh-config set user_environment.default_app $INTERFACE
 fi
     
