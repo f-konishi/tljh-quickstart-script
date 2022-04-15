@@ -12,7 +12,7 @@ curl -L https://tljh.jupyter.org/bootstrap.py \
   | sudo python3 - \
     --admin $USERNAME
 
-if [$AUTHTYPE = "NativeAuthenticator"]; then
+if [ $AUTHTYPE = "NativeAuthenticator"]; then
     tljh-config set auth.type nativeauthenticator.NativeAuthenticator
     tljh-config set auth.NativeAuthenticator.allowed_failed_logins $FAILED_LOGINS
     tljh-config set auth.NativeAuthenticator.seconds_before_next_try $NEXT_TRY
@@ -24,7 +24,7 @@ EOT
 
 fi
 
-if [$INTERFACE != ""]; then
+if [ $INTERFACE != ""]; then
     tljh-config set user_environment.default_app $INTERFACE
 fi
     
