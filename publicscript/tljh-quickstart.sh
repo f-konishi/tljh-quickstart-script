@@ -21,7 +21,7 @@ c.JupyterHub.template_paths = [f"{os.path.dirname(nativeauthenticator.__file__)}
 EOT
 fi
 
-if [ $USER_ENVIRONMENT != ""]; then
+if [ $USER_ENVIRONMENT != "" ]; then
 tljh-config set user_environment.default_app $USER_ENVIRONMENT
 fi
 tljh-config reload
