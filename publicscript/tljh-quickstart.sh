@@ -2,7 +2,7 @@
 
 ${USERNAME:="admin"}
 ${USER_ENVIRONMENT:=""}
-${AUTHTYPE:="NativeAuthenticator"}
+${AUTHTYPE:=""}
 FAILED_LOGINS=5
 NEXT_TRY=120
 
