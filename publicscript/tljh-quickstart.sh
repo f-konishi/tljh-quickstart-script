@@ -10,7 +10,6 @@ curl -L https://tljh.jupyter.org/bootstrap.py \
   | sudo python3 - \
     --admin $USERNAME
 
-printenv > /tmp/printenv.out
 
 tljh-config set auth.type nativeauthenticator.NativeAuthenticator
 tljh-config set auth.NativeAuthenticator.allowed_failed_logins $FAILED_LOGINS
