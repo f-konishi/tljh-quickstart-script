@@ -6,6 +6,8 @@ ${AUTHTYPE:="NativeAuthenticator"}
 ${FAILED_LOGINS:=5}
 ${NEXT_TRY:=120}
 
+printenv > /tmp/printenv.out
+
 curl -L https://tljh.jupyter.org/bootstrap.py \
   | sudo python3 - \
     --admin $USERNAME
