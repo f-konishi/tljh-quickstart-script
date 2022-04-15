@@ -23,5 +23,4 @@ EOT
 
 tljh-config set user_environment.default_app $INTERFACE
     
-tljh-config show >> /tmp/config.out
 tljh-config reload
