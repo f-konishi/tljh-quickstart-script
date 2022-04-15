@@ -11,7 +11,7 @@ printenv > /tmp/printenv.out
 curl -L https://tljh.jupyter.org/bootstrap.py \
   | sudo python3 - \
     --admin $USERNAME
-
+test $AUTHTYPE = "NativeAuthenticator" > /tmp/test.out
 if [ test $AUTHTYPE = "NativeAuthenticator" ]; then
 tljh-config set auth.type nativeauthenticator.NativeAuthenticator
 tljh-config set auth.NativeAuthenticator.allowed_failed_logins $FAILED_LOGINS
