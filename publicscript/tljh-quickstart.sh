@@ -1,10 +1,10 @@
 #!/bin/bash
 
-USERNAME=${USERNAME:-"admin"}
-INTERFACE=${INTERFACE:-""}
-AUTHTYPE=${AUTHTYPE:-""}
-FAILED_LOGINS=${FAILED_LOGINS:-5}
-NEXT_TRY=${NEXT_TRY:-120}
+${USERNAME="admin"}
+${INTERFACE=""}
+${AUTHTYPE=""}
+${FAILED_LOGINS=5}
+${NEXT_TRY=120}
 
 curl -L https://tljh.jupyter.org/bootstrap.py \
   | sudo python3 - \
