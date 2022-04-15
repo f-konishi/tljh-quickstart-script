@@ -22,6 +22,6 @@ EOT
 fi
 
 if [ $USER_ENVIRONMENT != ""]; then
-tljh-config set user_environment.default_app $INTERFACE
+tljh-config set user_environment.default_app $USER_ENVIRONMENT
 fi
 tljh-config reload
