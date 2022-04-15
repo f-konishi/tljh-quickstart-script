@@ -3,8 +3,8 @@
 ${USERNAME:="admin"}
 ${INTERFACE:=""}
 ${AUTHTYPE:="NativeAuthenticator"}
-${FAILED_LOGINS:=5}
-${NEXT_TRY:=120}
+FAILED_LOGINS=5
+NEXT_TRY=120
 
 curl -L https://tljh.jupyter.org/bootstrap.py \
   | sudo python3 - \
