@@ -1,10 +1,10 @@
 #!/bin/bash
 
-${USERNAME="admin"}
-${INTERFACE="_"}
-${AUTHTYPE="_"}
-${FAILED_LOGINS=5}
-${NEXT_TRY=120}
+${USERNAME:="admin"}
+${INTERFACE:=""}
+${AUTHTYPE:=""}
+${FAILED_LOGINS:=5}
+${NEXT_TRY:=120}
 
 curl -L https://tljh.jupyter.org/bootstrap.py \
   | sudo python3 - \
@@ -23,7 +23,7 @@ EOT
 
 fi
 
-if [$INTERFACE != "_"]; then
+if [$INTERFACE != ""]; then
     tljh-config set user_environment.default_app $INTERFACE
 fi
     
