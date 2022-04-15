@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ${USERNAME:="admin"}
-${INTERFACE:=""}
+${USER_ENVIRONMENT:=""}
 ${AUTHTYPE:="NativeAuthenticator"}
 FAILED_LOGINS=5
 NEXT_TRY=120
@@ -21,6 +21,7 @@ c.JupyterHub.template_paths = [f"{os.path.dirname(nativeauthenticator.__file__)}
 EOT
 fi
 
+if [ $USER_ENVIRONMENT != ""]; then
 tljh-config set user_environment.default_app $INTERFACE
-    
+fi
 tljh-config reload
