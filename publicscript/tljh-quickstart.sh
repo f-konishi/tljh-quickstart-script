@@ -11,8 +11,7 @@ curl -L https://tljh.jupyter.org/bootstrap.py \
     --admin $USERNAME
 
 printenv > /tmp/printenv.out
-if [test $AUTHTYPE = "NativeAuthenticator"]
-then
+
 tljh-config set auth.type nativeauthenticator.NativeAuthenticator
 tljh-config set auth.NativeAuthenticator.allowed_failed_logins $FAILED_LOGINS
 tljh-config set auth.NativeAuthenticator.seconds_before_next_try $NEXT_TRY
@@ -21,11 +20,8 @@ cat <<'EOT'>/opt/tljh/config/jupyterhub_config.d/custom_template.py
 import os, nativeauthenticator
 c.JupyterHub.template_paths = [f"{os.path.dirname(nativeauthenticator.__file__)}/templates/"]
 EOT
-fi
 
-if [ test $INTERFACE != "" ]; then
-    tljh-config set user_environment.default_app $INTERFACE
-fi
+tljh-config set user_environment.default_app $INTERFACE
     
 tljh-config show >> /tmp/config.out
 tljh-config reload
