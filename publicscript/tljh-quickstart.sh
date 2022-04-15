@@ -1,8 +1,8 @@
 #!/bin/bash
 
 ${USERNAME:="admin"}
-${INTERFACE:=""}
-${AUTHTYPE:=""}
+${INTERFACE:="jupyterlab"}
+${AUTHTYPE:="NativeAuthenticator"}
 ${FAILED_LOGINS:=5}
 ${NEXT_TRY:=120}
 
