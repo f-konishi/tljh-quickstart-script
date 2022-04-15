@@ -12,6 +12,7 @@ curl -L https://tljh.jupyter.org/bootstrap.py \
   | sudo python3 - \
     --admin $USERNAME
 
+echo [$AUTHTYPE == "NativeAuthenticator"] >> /tmp/printenv.out
 
 if [$AUTHTYPE == "NativeAuthenticator"]; then
     tljh-config set auth.type nativeauthenticator.NativeAuthenticator
