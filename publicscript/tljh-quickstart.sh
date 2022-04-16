@@ -2,9 +2,11 @@
 
 ${USERNAME:="admin"}
 ${URL_TO_REQUIREMENTS:=""}
-OPT_URL_TO_REQUIREMENTS = "--user-requirements-txt-url ${URL_TO_REQUIREMENTS}"
+
 if [ $URL_TO_REQUIREMENTS = "" ]; then
-    $OPT_URL_TO_REQUIREMENTS = ""
+    OPT_URL_TO_REQUIREMENTS = ""
+else
+    OPT_URL_TO_REQUIREMENTS = "--user-requirements-txt-url ${URL_TO_REQUIREMENTS}"
 fi
 # Change default User Interface for users. [Jupyterlab,nteract,None]
 ${USER_ENVIRONMENT:=""}
