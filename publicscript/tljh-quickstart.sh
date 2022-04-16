@@ -17,11 +17,14 @@ ${CREATE_USERS=""}
 
 curl -L https://tljh.jupyter.org/bootstrap.py \
   | sudo python3 - \
-    --admin $USERNAME  --user-requirements-txt-url $URL_TO_REQUIREMENTS
+    --admin $USERNAME 
 
 if [ $AUTHTYPE = "NativeAuthenticator" ]; then
 tljh-config set auth.type nativeauthenticator.NativeAuthenticator
+
+if [ $OPEN_SIGNUP != "" ]; then
 tljh-config set auth.NativeAuthenticator.open_signup $OPEN_SIGNUP
+fi
 tljh-config set auth.NativeAuthenticator.allowed_failed_logins $FAILED_LOGINS
 tljh-config set auth.NativeAuthenticator.seconds_before_next_try $NEXT_TRY
 
