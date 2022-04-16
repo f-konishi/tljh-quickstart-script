@@ -2,6 +2,10 @@
 
 ${USERNAME:="admin"}
 ${URL_TO_REQUIREMENTS:=""}
+OPT_URL_TO_REQUIREMENTS = "--user-requirements-txt-url ${URL_TO_REQUIREMENTS}"
+if [ $URL_TO_REQUIREMENTS = "" ]; then
+    $OPT_URL_TO_REQUIREMENTS = ""
+fi
 # Change default User Interface for users. [Jupyterlab,nteract,None]
 ${USER_ENVIRONMENT:=""}
 # Change Authenticator [firstuseauthenticator.FirstUseAuthenticator,nativeauthenticator.NativeAuthenticator]
@@ -17,7 +21,7 @@ ${CREATE_USERS=""}
 
 curl -L https://tljh.jupyter.org/bootstrap.py \
   | sudo python3 - \
-    --admin $USERNAME 
+    --admin $USERNAME $OPT_URL_TO_REQUIREMENTS
 
 if [ $AUTHTYPE = "NativeAuthenticator" ]; then
 tljh-config set auth.type nativeauthenticator.NativeAuthenticator
