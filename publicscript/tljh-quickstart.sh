@@ -1,10 +1,12 @@
 #!/bin/bash
 
 ${USERNAME:="admin"}
+# Change default User Interface for users. [Jupyterlab,nteract,None]
 ${USER_ENVIRONMENT:=""}
+# Change Authenticator [firstuseauthenticator.FirstUseAuthenticator,nativeauthenticator.NativeAuthenticator]
 ${AUTHTYPE:=""}
-FAILED_LOGINS=5
-NEXT_TRY=120
+${FAILED_LOGINS=5}
+${NEXT_TRY=120}
 
 curl -L https://tljh.jupyter.org/bootstrap.py \
   | sudo python3 - \
