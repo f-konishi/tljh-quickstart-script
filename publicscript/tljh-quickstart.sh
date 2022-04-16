@@ -17,7 +17,7 @@ ${CREATE_USERS=""}
 
 curl -L https://tljh.jupyter.org/bootstrap.py \
   | sudo python3 - \
-    --admin $USERNAME --showprogress-page --user-requirements-txt-url $URL_TO_REQUIREMENTS
+    --admin $USERNAME  --user-requirements-txt-url $URL_TO_REQUIREMENTS
 
 if [ $AUTHTYPE = "NativeAuthenticator" ]; then
 tljh-config set auth.type nativeauthenticator.NativeAuthenticator
